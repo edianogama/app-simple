@@ -17,7 +17,7 @@ class AuthenticationService extends GetxService{
 
     if (jsonResponse.hasError) return null;
 
-    return User.fromJson(jsonResponse.body["data"]);
+    return User.fromJson(jsonResponse.body);
   }
 
   Future<Auth> signInWithUsernameAndPassword(String username, String password) async {

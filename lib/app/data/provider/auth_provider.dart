@@ -10,10 +10,8 @@ class AuthApiClient extends GetConnect{
   
   Future<dynamic> me() async {
     var token = Storage.getValue('gc-token');
-    var response = await get(Constants.BASE_URL + "v1/me",
+    var response = await get(Constants.BASE_URL + "me",
     headers: {
-      'X-Api-Key': 'dR4hLfNMQysJXnf6ZTbTWSv5JRkCpMhO',
-      'X-App-Id': 'AHcbMoKFvFwA',
       'Authorization': 'Bearer '+ token
     });
     return response;
