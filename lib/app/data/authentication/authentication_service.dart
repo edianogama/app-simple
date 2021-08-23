@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_app/app/common/storage/storage.dart';
+import 'package:flutter_app/app/common/values/strings.dart';
 import 'package:flutter_app/app/data/model/auth/auth_model.dart';
 import 'package:flutter_app/app/data/model/user/user_model.dart';
 import 'package:flutter_app/app/data/provider/auth_provider.dart';
@@ -24,7 +25,7 @@ class AuthenticationService extends GetxService{
     Response<dynamic> jsonResponse = await apiClient.login(username, password);
 
     if (jsonResponse.hasError) {
-      Get.defaultDialog(title: 'Alert', middleText: "Ocorreu um erro ao logar, tente novamente");
+      Get.defaultDialog(title: 'Alert', middleText: Strings.defaultMessageError);
       throw AuthenticationException(message: 'Error');
     }
 

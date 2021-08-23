@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app/common/values/strings.dart';
 import 'package:flutter_app/app/data/authentication/authentication_controller.dart';
 import 'package:flutter_app/app/data/authentication/authentication_state.dart';
 import 'package:flutter_app/app/modules/initial/views/initial_page.dart';
@@ -23,7 +24,7 @@ class LoginController extends GetxController {
     _authController.signIn(usernameController.text, passwordController.text);
   }
 
-  loginWithGoogle() async {
+  loginWithFacebook() async {
     final LoginResult result = await FacebookAuth.i.login(
       permissions: ['public_profile', 'email']
     );
@@ -31,7 +32,7 @@ class LoginController extends GetxController {
       final AccessToken accessToken = result.accessToken!;
       await  _authController.signInWithData(accessToken);
     }
-    print(result.status);
+    Get.defaultDialog(title: 'Alert', middleText: Strings.defaultMessageError);
   }
 
 }

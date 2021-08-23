@@ -10,6 +10,7 @@ class Strings {
   static const String appName = 'Aplicativo';
   static const String ok = 'Ok';
   static const String error = 'Error';
+  static const String defaultMessageError = 'Ocorreu um erro ao logar, tente novamente!';
   static const String noInternet = 'No internet. Please try again later.';
   static const String comeTologIn = 'Realizar Login';
   static const String logIn = 'Log in';
