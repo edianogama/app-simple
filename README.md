@@ -1,16 +1,56 @@
 # flutter_app
 
-A new Flutter project.
+Flutter project
+### Instalação
+1. Flutter [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+2. Clone o repositório
+3. Altere a urlBase em: 
+   ```sh
+       lib/app/common/constants
+    ```
 
-## Getting Started
+    ```sh
+       BASE_URL=<URL>
+    ```
+4. Vá até a pasta raiz
+   ```sh
+   flutter pub get 
+   ```
+5. Abra o simulador 
+    ```sh
+    open -a Simulator
+    ```
+6. Execute o aplicativo
 
-This project is a starting point for a Flutter application.
+### Estrutura de pasta
+Estrutura de pasta deste projeto.
 
-A few resources to get you started if this is your first Flutter project:
+```
+lib/
+|- app/
+|- main.dart
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+app/
+|- common/
+   |- storage/
+   |- util/
+   |- values/
+   |- constants.dart
+|- data/
+   |- authentication/
+   |- model/
+   |- provider/
+   |- repository/
+   |- interface_controller/
+   |- interface_controller/
+   |- api_helper.dart
+|- modules/
+   |- home/
+   |- events/
+   |- initial/
+   |- login/
+   |- widgets/
+|- routes/
+```
