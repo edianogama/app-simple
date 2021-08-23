@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController {
 
-  final formKey = GlobalKey<FormState>();
   final _authController = Get.find<AuthenticationController>();
   // final GoogleSignIn _googleSignIn = GoogleSignIn();
 
@@ -19,7 +18,6 @@ class LoginController extends GetxController {
     if(_authController.state is Authenticated){
       Get.off(() => InitialPage());
     }
-
     if(usernameController.text.isEmpty) return null;
     _authController.signIn(usernameController.text, passwordController.text);
   }

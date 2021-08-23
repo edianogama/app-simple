@@ -15,10 +15,11 @@ import 'package:get/get.dart';
 
 class LoginView extends GetView<LoginController> {
   final controller = LoginController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   
   Widget _formCompose() {
     return Form(
-      key: controller.formKey,
+      key: _formKey,
       child: Column(
         children: <Widget>[
           InputField(title: Strings.userName, controller: controller.usernameController, ),
@@ -48,7 +49,15 @@ class LoginView extends GetView<LoginController> {
                     CustomColumnTextWidget(title: Strings.logIn, subtitle: Strings.loginSubtitle,),
                     SizedBox(height: 50.h),
                     _formCompose(),
-                    TextButtonGradient(title: Strings.logIn, onPressed: () => controller.login()),
+                    TextButtonGradient(title: Strings.logIn, 
+                      onPressed: () {
+                        _formKey.currentState?.save();
+                        bool? response = _formKey.currentState?.validate();
+                        if (response != null && response) {
+                          controller.login();
+                        }
+                      }
+                    ),
                     InkWell(
                       onTap: () => {
                         controller.loginWithFacebook()

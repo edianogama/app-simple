@@ -31,6 +31,7 @@ class InputField extends StatelessWidget {
           ),
           TextFormField(
             controller: controller,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) { 
               if (value != null && value.isEmpty){
                 return Strings.cantBeEmpty;
