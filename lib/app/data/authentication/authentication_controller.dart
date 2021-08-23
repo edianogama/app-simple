@@ -24,7 +24,6 @@ class AuthenticationController extends GetxController {
     final user = await _authenticationService.signInWithUsernameAndPassword(email, password);
     _authenticationStateStream.value = Authenticated(user: user.user);
     Get.offAndToNamed(Routes.INITIAL);
-    print('chegou');
   }
   
   Future<void> signInWithData(AccessToken accessToken) async {

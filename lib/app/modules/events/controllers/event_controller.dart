@@ -15,7 +15,6 @@ class EventController extends GetxController {
 
   @override
   void onReady() {
-    print('>>> EventController onReady');
     if(_authController.state is Authenticated) {
       getAllEvents();
     }

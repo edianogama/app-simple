@@ -51,7 +51,6 @@ class LoginView extends GetView<LoginController> {
                     TextButtonGradient(title: Strings.logIn, onPressed: () => controller.login()),
                     InkWell(
                       onTap: () => {
-                        print('logar com facebook'),
                         controller.loginWithGoogle()
                       },
                       child: FacebookButton(),

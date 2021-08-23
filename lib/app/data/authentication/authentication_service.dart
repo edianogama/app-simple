@@ -35,7 +35,6 @@ class AuthenticationService extends GetxService{
 
   Future<Auth> signInWithCredential(dynamic payload) async {
     Response<dynamic> jsonResponse = await apiClient.signInWithCredential(payload);
-    print(jsonResponse);
 
     if (jsonResponse.hasError) {
       Get.defaultDialog(title: 'Alert', middleText: "Ocorreu um erro ao registrar/Logar o usuário, tente novamente!");
