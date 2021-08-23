@@ -45,7 +45,7 @@ class LoginView extends GetView<LoginController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(height: height * .2),
-                    CustomColumnTextWidget(title: 'Login', subtitle: 'Log in to your account',),
+                    CustomColumnTextWidget(title: Strings.logIn, subtitle: Strings.loginSubtitle,),
                     SizedBox(height: 50.h),
                     _formCompose(),
                     TextButtonGradient(title: Strings.logIn, onPressed: () => controller.login()),
@@ -62,7 +62,7 @@ class LoginView extends GetView<LoginController> {
                         children: [
                           CustomInkwellWidget(
                             onTap: () {
-                                Get.toNamed(Routes.INITIAL);
+                                Get.offAndToNamed(Routes.INITIAL);
                               }, 
                               child: Text(Strings.back,
                                 style: TextStyle(

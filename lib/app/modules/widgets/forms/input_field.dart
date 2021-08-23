@@ -35,14 +35,6 @@ class InputField extends StatelessWidget {
               if (value != null && value.isEmpty){
                 return Strings.cantBeEmpty;
               }
-              if (isPassword && (value != null && value.length < 3) ) { 
-                return Strings.fieldGreaterThan;
-              }
-              if (equalToField.isNotEmpty) { 
-                if(controller.text != equalToField)  { 
-                  return Strings.confirmPasswordValidation;
-                }
-              }
               return null;
             },
               obscureText: isPassword,
