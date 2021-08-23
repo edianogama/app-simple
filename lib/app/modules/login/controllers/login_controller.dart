@@ -20,10 +20,9 @@ class LoginController extends GetxController {
     }
 
     if(usernameController.text.isEmpty) return null;
-
     _authController.signIn(usernameController.text, passwordController.text);
   }
-  
+
   loginWithGoogle() async {
     final LoginResult result = await FacebookAuth.i.login(
       permissions: ['public_profile', 'email']

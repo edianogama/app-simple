@@ -38,11 +38,11 @@ class AuthenticationService extends GetxService{
     print(jsonResponse);
 
     if (jsonResponse.hasError) {
-      Get.defaultDialog(title: 'Alert', middleText: "Ocorreu um erro ao registrar o usuário, tente novamente!");
+      Get.defaultDialog(title: 'Alert', middleText: "Ocorreu um erro ao registrar/Logar o usuário, tente novamente!");
       throw AuthenticationException(message: 'Error');
     }
 
-    Auth userAuthenticated = Auth.fromJson(jsonResponse.body["data"]);
+    Auth userAuthenticated = Auth.fromJson(jsonResponse.body);
     Storage.saveValue('gc-token', userAuthenticated.token);
     return userAuthenticated;
   }

@@ -18,7 +18,7 @@ class AuthApiClient extends GetConnect{
   }
 
   Future<dynamic> signInWithCredential(dynamic payload) async {
-    var response = await post(Constants.BASE_URL + "/social/register", payload);
+    var response = await post(Constants.BASE_URL + "auth/facebook", {'access_token': payload });
     return response;
   }
 }
